@@ -22,10 +22,7 @@ export default function HeroSection() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      // Step 1: Start fading out
       setFadeClass('headline-fade-out');
-
-      // Step 2: Swap text & fade in after brief transition
       setTimeout(() => {
         setHeadlineIndex((prev) => (prev + 1) % rotatingHeadlines.length);
         setFadeClass('headline-fade-in');
@@ -48,7 +45,7 @@ export default function HeroSection() {
     {
       id: 1,
       title: 'Inquiry & Scoping',
-      desc: 'Requirements analyzed & matched with best-fit tech stack',
+      desc: 'Requirements analyzed & mapped to optimal React & AI tech stack',
       icon: '⚡',
       action: 'Automatic Scope Definition',
       summary: 'Automated technical scoping complete • Matched with React & n8n architecture',
@@ -56,7 +53,7 @@ export default function HeroSection() {
     {
       id: 2,
       title: 'UI/UX Blueprint',
-      desc: 'Interactive Figma design system & user journey mapping',
+      desc: 'Interactive Figma design systems, tokens & user journey flows',
       icon: '🎨',
       action: 'Figma Token Generation',
       summary: 'High-fidelity design components synced with production theme tokens',
@@ -64,15 +61,15 @@ export default function HeroSection() {
     {
       id: 3,
       title: 'Full-Stack Build',
-      desc: 'Clean React code, robust APIs, and workflow automations',
+      desc: 'Clean modular code, robust REST/GraphQL APIs & automated workflows',
       icon: '⚙️',
       action: 'Deterministic Testing Suite',
       summary: 'Continuous integration pipeline running automated lint & performance checks',
     },
     {
       id: 4,
-      title: 'Launch & Growth',
-      desc: 'Zero-downtime deployment, analytics & ongoing support',
+      title: 'Launch & Scale',
+      desc: 'Zero-downtime production deployment with 24/7 uptime monitoring',
       icon: '🚀',
       action: 'Live Production Release',
       summary: 'Production deployment live on edge CDN with automated health monitoring',
@@ -135,17 +132,20 @@ export default function HeroSection() {
             <div className="workflow-card">
               <div className="workflow-header">
                 <div style={{ textAlign: 'left' }}>
-                  <span className="section-eyebrow">LIVE ARCHITECTURE SIMULATION</span>
-                  <h4 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text-primary)' }}>
+                  <span className="section-eyebrow" style={{ color: 'var(--brand-blue)' }}>
+                    LIVE ARCHITECTURE SIMULATION
+                  </span>
+                  <h4 style={{ fontSize: '20px', fontWeight: '800', color: 'var(--text-primary)' }}>
                     How We Execute Your Vision End-to-End
                   </h4>
                 </div>
                 <div className="workflow-status-live">
+                  <span className="live-pulse-dot"></span>
                   <span>Operational • 99.9% Uptime</span>
                 </div>
               </div>
 
-              {/* 4 Interactive Pipeline Nodes */}
+              {/* 4 Large, Highly Legible Pipeline Nodes */}
               <div className="workflow-pipeline">
                 {workflowSteps.map((step, idx) => (
                   <div
@@ -165,7 +165,7 @@ export default function HeroSection() {
 
               {/* Active Step Live Inspector */}
               <div className="active-step-inspector">
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <div className="inspector-left-content">
                   <span className="active-node-tag">
                     Node 0{workflowSteps[activeWorkflowNode].id}: {workflowSteps[activeWorkflowNode].action}
                   </span>
@@ -173,8 +173,8 @@ export default function HeroSection() {
                     {workflowSteps[activeWorkflowNode].summary}
                   </span>
                 </div>
-                <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
-                  Click nodes to inspect execution
+                <span className="inspector-hint-text">
+                  Click any stage above to inspect
                 </span>
               </div>
 

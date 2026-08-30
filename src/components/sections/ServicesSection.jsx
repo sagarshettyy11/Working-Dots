@@ -115,21 +115,24 @@ export default function ServicesSection() {
         <div className="services-grid">
           {services.map((srv) => (
             <div key={srv.id} className="service-card">
-              <div>
-                <div className="service-card-header">
-                  <div className="service-icon-box">{srv.icon}</div>
-                  <span className="service-tag">{srv.tag}</span>
-                </div>
-                <h3 className="service-title">{srv.title}</h3>
-                <p className="service-description">{srv.desc}</p>
+              <div className="service-card-header">
+                <div className="service-icon-box">{srv.icon}</div>
+                <span className="service-tag">{srv.tag}</span>
               </div>
 
-              <div className="service-deliverables">
-                {srv.deliverables.map((item, idx) => (
-                  <span key={idx} className="deliverable-pill">
-                    {item}
-                  </span>
-                ))}
+              <h3 className="service-title">{srv.title}</h3>
+              <p className="service-description">{srv.desc}</p>
+
+              <div className="service-deliverables-wrap">
+                <div className="deliverables-micro-title">Key Deliverables:</div>
+                <div className="service-deliverables-list">
+                  {srv.deliverables.map((item, idx) => (
+                    <div key={idx} className="service-deliverable-point">
+                      <span className="deliverable-check-mark">✓</span>
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           ))}

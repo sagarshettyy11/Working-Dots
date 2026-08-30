@@ -18,46 +18,21 @@ export default function LandingPage() {
 
   return (
     <div className="landing-page">
-      {/* 1. Global Sticky Navigation */}
       <Navbar />
-
-      {/* 2. Hero Section with Live Workflow Simulation */}
       <HeroSection />
-
-      {/* 3. Key Startup Impact Metrics */}
       <MetricsBar />
-
-      {/* 4. Philosophy & Alignment Section */}
       <PhilosophySection />
-
-      {/* 5. Core Service Pillars */}
       <ServicesSection />
-
-      {/* 6. Filterable Case Studies & Portfolio */}
       <PortfolioSection onSelectCaseStudy={(caseStudy) => setSelectedCaseStudy(caseStudy)} />
-
-      {/* 7. Interactive Case Study Modal */}
       <CaseStudyModal
         caseStudy={selectedCaseStudy}
         onClose={() => setSelectedCaseStudy(null)}
       />
-
-      {/* 8. 7-Stage Interactive Split Roadmap */}
       <ProcessSection />
-
-      {/* 9. Authentic Studio Comparison Matrix */}
       <WhyUsSection />
-
-      {/* 10. Careers & Open Positions */}
       <CareersSection />
-
-      {/* 11. About Us, Startup Values & Team */}
       <AboutSection />
-
-      {/* 12. High-Converting Contact & Project Inquiry Hub */}
       <ContactSection />
-
-      {/* 13. Minimalist Global Footer */}
       <Footer />
     </div>
   );
