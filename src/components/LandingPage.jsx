@@ -30,7 +30,7 @@ export default function LandingPage() {
       />
       <ProcessSection />
       <WhyUsSection />
-      <CareersSection />
+      {/* <CareersSection /> */}
       <AboutSection />
       <ContactSection />
       <Footer />

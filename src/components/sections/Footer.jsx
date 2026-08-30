@@ -59,7 +59,6 @@ export default function Footer() {
                 <li><a href="#services">Website Development</a></li>
                 <li><a href="#services">Mobile App Development</a></li>
                 <li><a href="#services">AI Automation & Workflows</a></li>
-                <li><a href="#services">WhatsApp Ordering Systems</a></li>
                 <li><a href="#services">Restaurant & Café Suites</a></li>
                 <li><a href="#services">UI/UX Design Systems</a></li>
                 <li><a href="#services">Branding & Social Growth</a></li>
@@ -73,7 +72,7 @@ export default function Footer() {
                 <li><a href="#work">Featured Work</a></li>
                 <li><a href="#process">How We Work</a></li>
                 <li><a href="#why-us">Why Choose Us</a></li>
-                <li><a href="#careers">Careers & Open Roles</a></li>
+                {/* <li><a href="#careers">Careers & Open Roles</a></li> */}
                 <li><a href="#contact">Start a Project</a></li>
               </ul>
             </div>

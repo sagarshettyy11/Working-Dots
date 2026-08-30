@@ -19,7 +19,7 @@ export default function Navbar() {
             <li><a href="#work" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Work</a></li>
             <li><a href="#process" className="nav-link" onClick={() => setMobileMenuOpen(false)}>How We Work</a></li>
             <li><a href="#why-us" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Why Us</a></li>
-            <li><a href="#careers" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Careers</a></li>
+            {/* <li><a href="#careers" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Careers</a></li> */}
             <li><a href="#about" className="nav-link" onClick={() => setMobileMenuOpen(false)}>About</a></li>
           </ul>
         </nav>

@@ -15,7 +15,6 @@ export default function ContactSection() {
     'Website Development',
     'Mobile App Development',
     'AI Automation',
-    'WhatsApp Ordering Systems',
     'Restaurant & Café Suites',
     'UI/UX Design',
     'Branding & Social Media Growth',
