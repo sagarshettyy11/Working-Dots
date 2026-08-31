@@ -1,6 +1,6 @@
 import React from 'react';
 import studioWorkspaceImg from '../../assets/images/studio_workspace.jpg';
-import { TEAM_MEMBERS, COMPANY_VALUES } from '../../lib/team-data';
+import { COMPANY_VALUES } from '../../lib/team-data';
 
 export default function AboutSection() {
   return (
@@ -64,24 +64,6 @@ export default function AboutSection() {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Team Grid */}
-        <div className="team-grid">
-          {TEAM_MEMBERS.map((member) => (
-            <div key={member.id} className="team-member-card">
-              <div className="member-avatar">{member.initials}</div>
-              <div className="member-badge-pill">{member.badge}</div>
-              <div className="member-name">{member.name}</div>
-              <div className="member-role">{member.role}</div>
-              <div className="member-bio">{member.bio}</div>
-              <div className="member-skills-list">
-                {member.skills.map((s, idx) => (
-                  <span key={idx} className="member-skill-tag">{s}</span>
-                ))}
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>

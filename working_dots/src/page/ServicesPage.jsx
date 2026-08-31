@@ -101,17 +101,14 @@ export default function ServicesPage({ navigate }) {
                 <span className="stat-num">{BRAND_CONFIG.projectsDelivered}</span>
                 <span className="stat-lbl">Shipped Systems</span>
               </div>
-              <div className="stat-divider"></div>
               <div className="hero-stat-box">
                 <span className="stat-num">{BRAND_CONFIG.uptimeSLA}</span>
                 <span className="stat-lbl">Uptime SLA</span>
               </div>
-              <div className="stat-divider"></div>
               <div className="hero-stat-box">
                 <span className="stat-num">{BRAND_CONFIG.avgTurnaroundDays} Days</span>
                 <span className="stat-lbl">Average Sprint Turnaround</span>
               </div>
-              <div className="stat-divider"></div>
               <div className="hero-stat-box">
                 <span className="stat-num">100%</span>
                 <span className="stat-lbl">In-House Senior Builders</span>

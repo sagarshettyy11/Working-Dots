@@ -147,54 +147,6 @@ export default function ITStudioSection() {
             </div>
           </div>
         </div>
-
-        {/* 3-Column Studio Grid Gallery to Fill Spaces */}
-        <div className="studio-gallery-grid">
-          <div className="studio-gallery-item">
-            <div className="gallery-img-wrap">
-              <img
-                src={itTeamImg}
-                alt="Agile Engineering Team"
-                className="gallery-img"
-                loading="lazy"
-              />
-              <div className="gallery-caption">
-                <h4>Agile Full-Stack Teams</h4>
-                <p>Fast sprint execution with direct engineer collaboration.</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="studio-gallery-item">
-            <div className="gallery-img-wrap">
-              <img
-                src={cloudDevopsImg}
-                alt="Cloud & AI Infrastructure"
-                className="gallery-img"
-                loading="lazy"
-              />
-              <div className="gallery-caption">
-                <h4>Cloud & AI Pipelines</h4>
-                <p>Autonomous n8n workflows and bulletproof 99.9% uptime.</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="studio-gallery-item">
-            <div className="gallery-img-wrap">
-              <img
-                src={uiuxDesignImg}
-                alt="UI/UX Prototyping Lab"
-                className="gallery-img"
-                loading="lazy"
-              />
-              <div className="gallery-caption">
-                <h4>Ergonomic UI/UX Systems</h4>
-                <p>Interactive Figma tokens mapped to production frontend code.</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

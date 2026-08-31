@@ -35,17 +35,14 @@ export default function ProjectsPage({ navigate }) {
                 <span className="stat-num">140+</span>
                 <span className="stat-lbl">Shipped Systems</span>
               </div>
-              <div className="stat-divider"></div>
               <div className="hero-stat-box">
                 <span className="stat-num">40+ hrs</span>
                 <span className="stat-lbl">Avg Weekly Time Saved</span>
               </div>
-              <div className="stat-divider"></div>
               <div className="hero-stat-box">
                 <span className="stat-num">380ms</span>
                 <span className="stat-lbl">Avg Page Load Speed</span>
               </div>
-              <div className="stat-divider"></div>
               <div className="hero-stat-box">
                 <span className="stat-num">4.9 / 5.0</span>
                 <span className="stat-lbl">App Store Quality Rating</span>
