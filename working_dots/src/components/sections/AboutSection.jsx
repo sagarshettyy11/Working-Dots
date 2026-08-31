@@ -1,4 +1,5 @@
 import React from 'react';
+import studioWorkspaceImg from '../../assets/images/studio_workspace.jpg';
 
 export default function AboutSection() {
   const values = [
@@ -40,6 +41,32 @@ export default function AboutSection() {
           <p>
             We are engineers, designers, and automation specialists who value clarity, speed, and real business outcomes over agency bureaucracy.
           </p>
+        </div>
+
+        {/* Studio Craftsmanship Visual Banner */}
+        <div className="about-studio-banner">
+          <div className="studio-img-wrapper">
+            <img
+              src={studioWorkspaceImg}
+              alt="Working Dots Engineering & Design Studio"
+              className="studio-img"
+              loading="lazy"
+            />
+          </div>
+          <div className="studio-caption-dock">
+            <div className="studio-dock-left">
+              <div className="studio-status-indicator">
+                <span className="live-pulse-dot"></span>
+                <span className="studio-dock-title">Working Dots Studio</span>
+              </div>
+              <span className="studio-dock-separator">•</span>
+              <span className="studio-dock-sub">Where Design Systems Meet High-Performance Code</span>
+            </div>
+            <div className="studio-dock-right">
+              <span className="studio-stat-pill">⚡ 100% In-House Craft</span>
+              <span className="studio-stat-pill">🛡️ Zero Bureaucracy</span>
+            </div>
+          </div>
         </div>
 
         <div className="about-grid">

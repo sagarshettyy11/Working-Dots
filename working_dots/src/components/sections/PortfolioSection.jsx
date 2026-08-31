@@ -1,4 +1,13 @@
 import React, { useState } from 'react';
+import apexPreview from '../../assets/images/apex_logistics_preview.jpg';
+import velocePreview from '../../assets/images/veloce_pulse_preview.jpg';
+import kromaPreview from '../../assets/images/kroma_studio_preview.jpg';
+import omniflowPreview from '../../assets/images/omniflow_preview.jpg';
+
+import apexDeepdive from '../../assets/images/apex_logistics_deepdive.jpg';
+import veloceDeepdive from '../../assets/images/veloce_pulse_deepdive.jpg';
+import kromaDeepdive from '../../assets/images/kroma_studio_deepdive.jpg';
+import omniflowDeepdive from '../../assets/images/omniflow_deepdive.jpg';
 
 export default function PortfolioSection({ onSelectCaseStudy }) {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -10,13 +19,19 @@ export default function PortfolioSection({ onSelectCaseStudy }) {
       tag: 'AI Workflows & CRM',
       title: 'Apex Global Logistics — Autonomous Dispatch Pipeline',
       metric: '42 hrs/week saved',
+      image: apexPreview,
+      deepdiveImage: apexDeepdive,
       problem: 'Manual driver dispatching and invoice reconciliation took 6 hours daily with 8% billing error rates.',
       solution: 'Engineered an autonomous n8n + OpenAI workflow syncing WhatsApp driver check-ins directly with PostgreSQL and Stripe invoicing.',
       tech: ['n8n', 'Python', 'PostgreSQL', 'WhatsApp API', 'OpenAI'],
       fullDetails: {
         client: 'Apex Global Freight',
         timeline: '2 Weeks Delivery',
-        results: ['100% automated invoice reconciliation', 'Driver response time dropped from 35 mins to 15 seconds', 'Zero manual data entry errors'],
+        results: [
+          '100% automated invoice reconciliation',
+          'Driver response time dropped from 35 mins to 15 seconds',
+          'Zero manual data entry errors',
+        ],
       },
     },
     {
@@ -25,13 +40,19 @@ export default function PortfolioSection({ onSelectCaseStudy }) {
       tag: 'Mobile & HealthTech',
       title: 'Veloce Pulse — Precision Fitness & Nutrition Coach',
       metric: '4.9★ App Store Rating',
+      image: velocePreview,
+      deepdiveImage: veloceDeepdive,
       problem: 'Clients abandoned fitness routines due to slow meal tracking interfaces and lack of offline workout logging.',
       solution: 'Built a 60fps React Native application with offline-first SQLite sync, AI meal vision estimation, and Apple HealthKit integration.',
       tech: ['React Native', 'TypeScript', 'Node.js', 'FastAPI', 'HealthKit'],
       fullDetails: {
         client: 'Veloce Health Corp',
         timeline: '3 Weeks Delivery',
-        results: ['24,000+ Active Monthly Users', '94% workout completion retention', 'Under 50ms interaction latency'],
+        results: [
+          '24,000+ Active Monthly Users',
+          '94% workout completion retention',
+          'Under 50ms interaction latency',
+        ],
       },
     },
     {
@@ -40,13 +61,19 @@ export default function PortfolioSection({ onSelectCaseStudy }) {
       tag: 'Web & SaaS Platform',
       title: 'Kroma Studio — Modern Creator Collaboration Suite',
       metric: '100/100 Performance Score',
+      image: kromaPreview,
+      deepdiveImage: kromaDeepdive,
       problem: 'Slow legacy WordPress architecture causing 4.2s load times and 60% mobile bounce rate for digital asset downloads.',
       solution: 'Engineered a bespoke Next.js web application with edge-rendered assets, real-time collaboration canvas, and automated Stripe billing.',
       tech: ['Next.js', 'Modern CSS', 'Supabase', 'Stripe', 'Vercel Edge'],
       fullDetails: {
         client: 'Kroma Digital Collective',
         timeline: '10 Days Turnaround',
-        results: ['Load times dropped from 4.2s to 0.4s', '3.1x boost in paid subscription conversions', 'Clean headless CMS integration'],
+        results: [
+          'Load times dropped from 4.2s to 0.4s',
+          '3.1x boost in paid subscription conversions',
+          'Clean headless CMS integration',
+        ],
       },
     },
     {
@@ -55,13 +82,19 @@ export default function PortfolioSection({ onSelectCaseStudy }) {
       tag: 'AI Workflow & Internal Systems',
       title: 'OmniFlow — Enterprise Knowledge Bot & Ticket Automator',
       metric: '72% Tier-1 Support Automated',
+      image: omniflowPreview,
+      deepdiveImage: omniflowDeepdive,
       problem: 'Support team was overwhelmed answering repetitive product questions and manually routing bug reports to engineers.',
       solution: 'Built an internal AI copilot trained on company technical documentation with intelligent Slack triage and Zendesk auto-routing.',
       tech: ['Python', 'FastAPI', 'Slack API', 'Vector Embeddings', 'Make.com'],
       fullDetails: {
         client: 'OmniCloud Systems',
         timeline: '12 Days Deployment',
-        results: ['Instant 24/7 client response times', 'Engineers receive pre-diagnosed bug reports', '99.9% uptime reliability'],
+        results: [
+          'Instant 24/7 client response times',
+          'Engineers receive pre-diagnosed bug reports',
+          '99.9% uptime reliability',
+        ],
       },
     },
   ];
@@ -99,25 +132,26 @@ export default function PortfolioSection({ onSelectCaseStudy }) {
         {/* Portfolio Grid */}
         <div className="portfolio-grid">
           {filteredProjects.map((project) => (
-            <div key={project.id} className="project-card">
+            <div key={project.id} className="project-card" onClick={() => onSelectCaseStudy(project)}>
               <div className="project-preview-frame">
-                <div className="preview-mockup-box">
-                  <div className="mockup-header-bar">
-                    <span className="mockup-dot"></span>
-                    <span className="mockup-dot"></span>
-                    <span className="mockup-dot"></span>
-                    <span style={{ fontSize: '11px', color: 'var(--text-subtle)', marginLeft: '8px' }}>
-                      {project.tech[0]} • {project.tech[1]}
-                    </span>
-                  </div>
-                  <div className="mockup-content-skeleton">
-                    <div className="skeleton-sidebar"></div>
-                    <div className="skeleton-main">
-                      <div className="skeleton-bar" style={{ width: '80%' }}></div>
-                      <div className="skeleton-bar" style={{ width: '60%' }}></div>
-                      <div className="skeleton-bar" style={{ width: '90%' }}></div>
-                      <div className="skeleton-bar" style={{ width: '45%' }}></div>
-                    </div>
+                <div className="mockup-header-bar">
+                  <span className="mockup-dot red"></span>
+                  <span className="mockup-dot yellow"></span>
+                  <span className="mockup-dot green"></span>
+                  <span className="mockup-url-chip">
+                    {project.category} • {project.tech[0]}
+                  </span>
+                  <span className="mockup-action-hint">Click to expand ↗</span>
+                </div>
+                <div className="project-img-wrapper">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="project-preview-img"
+                    loading="lazy"
+                  />
+                  <div className="project-preview-overlay">
+                    <span className="overlay-badge">View Case Study Deep-Dive →</span>
                   </div>
                 </div>
               </div>
@@ -142,7 +176,10 @@ export default function PortfolioSection({ onSelectCaseStudy }) {
                 <button
                   className="btn btn-secondary btn-sm"
                   style={{ alignSelf: 'flex-start' }}
-                  onClick={() => onSelectCaseStudy(project)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onSelectCaseStudy(project);
+                  }}
                 >
                   View Case Study Deep-Dive →
                 </button>
