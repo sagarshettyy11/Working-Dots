@@ -8,7 +8,6 @@ import PortfolioSection from './sections/PortfolioSection';
 import CaseStudyModal from './sections/CaseStudyModal';
 import ProcessSection from './sections/ProcessSection';
 import WhyUsSection from './sections/WhyUsSection';
-import CareersSection from './sections/CareersSection';
 import AboutSection from './sections/AboutSection';
 import ContactSection from './sections/ContactSection';
 import Footer from './sections/Footer';

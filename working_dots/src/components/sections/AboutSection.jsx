@@ -1,35 +1,8 @@
 import React from 'react';
 import studioWorkspaceImg from '../../assets/images/studio_workspace.jpg';
+import { TEAM_MEMBERS, COMPANY_VALUES } from '../../lib/team-data';
 
 export default function AboutSection() {
-  const values = [
-    { title: 'Craftsmanship First', desc: 'We take pride in writing clean code, designing clean layouts, and polishing every edge.' },
-    { title: 'Speed With Intent', desc: 'Fast delivery should never mean sloppy architecture. We move fast through disciplined systems.' },
-    { title: 'Radical Transparency', desc: 'No jargon, no hidden fees, and daily visibility into progress and GitHub commits.' },
-    { title: 'Long-Term Reliability', desc: 'We build digital products meant to run stably and scale without continuous maintenance overhead.' },
-  ];
-
-  const team = [
-    {
-      initials: 'SK',
-      name: 'Lead Product Architect',
-      role: 'Full-Stack & Cloud Systems',
-      bio: 'Ex-startup tech lead specializing in scalable Next.js applications, serverless infrastructures, and high-load APIs.',
-    },
-    {
-      initials: 'AR',
-      name: 'Head of UI/UX & Design',
-      role: 'Design Systems & Product UX',
-      bio: 'Design systems engineer with 8+ years crafting ergonomic SaaS web applications and fluid mobile interfaces.',
-    },
-    {
-      initials: 'MV',
-      name: 'Automation & AI Lead',
-      role: 'Autonomous Workflows & n8n',
-      bio: 'Automation specialist architecting deterministic AI agents, WhatsApp commerce pipelines, and business workflows.',
-    },
-  ];
-
   return (
     <section id="about" className="section-wrapper" style={{ backgroundColor: 'var(--bg-surface)' }}>
       <div className="container">
@@ -37,9 +10,9 @@ export default function AboutSection() {
           <div className="eyebrow">
             <span className="section-eyebrow">ABOUT WORKING DOTS</span>
           </div>
-          <h2>A Small, Elite Team Built for High-Impact Execution</h2>
+          <h2>An Elite Engineering & Design Studio Built for Impact</h2>
           <p>
-            We are engineers, designers, and automation specialists who value clarity, speed, and real business outcomes over agency bureaucracy.
+            We are senior software engineers, product designers, and AI automation specialists who value clarity, speed, and real business outcomes over agency bureaucracy.
           </p>
         </div>
 
@@ -81,9 +54,12 @@ export default function AboutSection() {
           </div>
 
           <div className="values-cards-grid">
-            {values.map((val, idx) => (
+            {COMPANY_VALUES.map((val, idx) => (
               <div key={idx} className="value-box">
-                <h4>{val.title}</h4>
+                <div className="value-box-header">
+                  <span className="value-icon">{val.icon}</span>
+                  <h4>{val.title}</h4>
+                </div>
                 <p>{val.desc}</p>
               </div>
             ))}
@@ -92,12 +68,18 @@ export default function AboutSection() {
 
         {/* Team Grid */}
         <div className="team-grid">
-          {team.map((member, idx) => (
-            <div key={idx} className="team-member-card">
+          {TEAM_MEMBERS.map((member) => (
+            <div key={member.id} className="team-member-card">
               <div className="member-avatar">{member.initials}</div>
+              <div className="member-badge-pill">{member.badge}</div>
               <div className="member-name">{member.name}</div>
               <div className="member-role">{member.role}</div>
               <div className="member-bio">{member.bio}</div>
+              <div className="member-skills-list">
+                {member.skills.map((s, idx) => (
+                  <span key={idx} className="member-skill-tag">{s}</span>
+                ))}
+              </div>
             </div>
           ))}
         </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { BRAND_CONFIG } from '../../lib/constants';
 
-export default function HeroSection() {
+export default function HeroSection({ navigate }) {
   const [activeWorkflowNode, setActiveWorkflowNode] = useState(0);
   const [headlineIndex, setHeadlineIndex] = useState(0);
   const [fadeClass, setFadeClass] = useState('headline-fade-in');
@@ -15,7 +16,7 @@ export default function HeroSection() {
       highlight: 'Scalable Products, Apps, & Systems.',
     },
     {
-      prefix: 'Streamlining Operations With',
+      prefix: 'Streamlining Enterprise Operations With',
       highlight: 'Intelligent Workflows & Modern Code.',
     },
   ];
@@ -48,7 +49,7 @@ export default function HeroSection() {
       desc: 'Requirements analyzed & mapped to optimal React & AI tech stack',
       icon: '⚡',
       action: 'Automatic Scope Definition',
-      summary: 'Automated technical scoping complete • Matched with React & n8n architecture',
+      summary: 'Automated technical scoping complete • Matched with React 19 & n8n architecture',
     },
     {
       id: 2,
@@ -56,7 +57,7 @@ export default function HeroSection() {
       desc: 'Interactive Figma design systems, tokens & user journey flows',
       icon: '🎨',
       action: 'Figma Token Generation',
-      summary: 'High-fidelity design components synced with production theme tokens',
+      summary: 'High-fidelity design components synced 1:1 with production CSS tokens',
     },
     {
       id: 3,
@@ -72,17 +73,27 @@ export default function HeroSection() {
       desc: 'Zero-downtime production deployment with 24/7 uptime monitoring',
       icon: '🚀',
       action: 'Live Production Release',
-      summary: 'Production deployment live on edge CDN with automated health monitoring',
+      summary: 'Production deployment live on edge CDN with automated 99.9% health monitoring',
     },
   ];
+
+  const handleServicesClick = (e) => {
+    e.preventDefault();
+    if (navigate) navigate('services');
+  };
+
+  const handleProjectsClick = (e) => {
+    e.preventDefault();
+    if (navigate) navigate('projects');
+  };
 
   return (
     <section className="hero-section">
       <div className="container">
         <div className="hero-content">
-          <div className="hero-eyebrow" style={{ marginBottom: '20px' }}>
+          <div className="hero-eyebrow">
             <span className="hero-eyebrow-tag">
-              Your Digital Architecture Studio
+              Enterprise Digital Engineering & Product Studio
             </span>
           </div>
 
@@ -107,24 +118,44 @@ export default function HeroSection() {
           </div>
 
           <p className="hero-subtitle">
-            We build high-performance websites, scalable mobile applications, deterministic AI automation workflows, and strategic digital growth systems under one unified roof.
+            We build high-performance websites, scalable iOS/Android mobile applications, deterministic autonomous AI automation pipelines, and modern cloud infrastructures under one unified roof.
           </p>
 
           <div className="hero-cta-group">
-            <a href="#contact" className="btn btn-primary">
+            <a
+              href="#contact"
+              className="btn btn-primary"
+              onClick={(e) => {
+                e.preventDefault();
+                if (navigate) navigate('home', 'contact');
+              }}
+            >
               Start a Project →
             </a>
-            <a href="#work" className="btn btn-secondary">
-              Explore Our Work
+            <a
+              href="/services"
+              className="btn btn-secondary"
+              onClick={handleServicesClick}
+            >
+              Explore All Services
+            </a>
+            <a
+              href="/projects"
+              className="btn btn-secondary"
+              onClick={handleProjectsClick}
+            >
+              View Case Studies
             </a>
           </div>
 
           <div className="hero-trust-bar">
-            <span>✓ Production-Ready Engineering</span>
+            <span>✓ {BRAND_CONFIG.projectsDelivered} Systems Shipped</span>
             <span>•</span>
-            <span>✓ Fast Turnarounds</span>
+            <span>✓ {BRAND_CONFIG.uptimeSLA} Uptime SLA</span>
             <span>•</span>
-            <span>✓ 100% Deterministic Code</span>
+            <span>✓ {BRAND_CONFIG.avgTurnaroundDays}-Day Sprints</span>
+            <span>•</span>
+            <span>✓ 100% In-House Builders</span>
           </div>
 
           {/* Interactive Workflow Simulation Dock */}
@@ -141,7 +172,7 @@ export default function HeroSection() {
                 </div>
                 <div className="workflow-status-live">
                   <span className="live-pulse-dot"></span>
-                  <span>Operational • 99.9% Uptime</span>
+                  <span>Operational • {BRAND_CONFIG.uptimeSLA} Uptime</span>
                 </div>
               </div>
 
@@ -152,6 +183,9 @@ export default function HeroSection() {
                     key={step.id}
                     className={`pipeline-node ${activeWorkflowNode === idx ? 'active' : ''}`}
                     onClick={() => setActiveWorkflowNode(idx)}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`Inspect step ${step.id}: ${step.title}`}
                   >
                     <div className="node-header">
                       <div className="node-icon">{step.icon}</div>
@@ -181,15 +215,16 @@ export default function HeroSection() {
               {/* Tool Ecosystem Dock */}
               <div className="ecosystem-dock">
                 <div className="dock-label">
-                  <span>Integrated Tool Stack:</span>
+                  <span>Integrated Production Stack:</span>
                 </div>
                 <div className="tool-pills">
-                  <span className="tool-pill">⚛️ React & Next.js</span>
-                  <span className="tool-pill">⚡ Vite & Node</span>
-                  <span className="tool-pill">🔄 n8n & Make</span>
-                  <span className="tool-pill">🐍 Python Automations</span>
-                  <span className="tool-pill">💬 WhatsApp Commerce</span>
-                  <span className="tool-pill">💳 Stripe Payments</span>
+                  <span className="tool-pill">⚛️ React 19 & Next.js 15</span>
+                  <span className="tool-pill">📱 React Native & Expo</span>
+                  <span className="tool-pill">⚡ Node & FastAPI</span>
+                  <span className="tool-pill">🔄 n8n & OpenAI</span>
+                  <span className="tool-pill">🐘 PostgreSQL & Supabase</span>
+                  <span className="tool-pill">💬 WhatsApp API</span>
+                  <span className="tool-pill">💳 Stripe & Razorpay</span>
                 </div>
               </div>
             </div>
