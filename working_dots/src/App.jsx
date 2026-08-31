@@ -64,6 +64,18 @@ export default function App() {
     };
   }, []);
 
+  // Handle initial hash scroll if arriving with a section link
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.hash) {
+      const target = window.location.hash.replace('#', '');
+      if (['process', 'why-us', 'about', 'contact'].includes(target)) {
+        setTimeout(() => {
+          smoothScrollTo(target, 80);
+        }, 150);
+      }
+    }
+  }, []);
+
   // Render appropriate view based on route
   const renderCurrentPage = () => {
     switch (currentRoute) {

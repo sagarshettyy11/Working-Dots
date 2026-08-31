@@ -88,7 +88,7 @@ export default function HeroSection({ navigate }) {
   };
 
   return (
-    <section className="hero-section">
+    <section id="hero" className="hero-section">
       <div className="container">
         <div className="hero-content">
           <div className="hero-eyebrow">
