@@ -165,11 +165,6 @@ export default function Footer({ navigate }) {
                     🔗 LinkedIn: /company/workingdots
                   </a>
                 </li>
-                <li>
-                  <span className="footer-location-text">
-                    📍 {BRAND_CONFIG.location}
-                  </span>
-                </li>
               </ul>
             </div>
           </div>
